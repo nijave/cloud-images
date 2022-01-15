@@ -52,6 +52,9 @@ variables {
   gencloud_boot_command_x86_64 = [
     "<tab> inst.text net.ifnames=0 inst.gpt inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/almalinux-8.gencloud-x86_64.ks<enter><wait>"
   ]
+  gencloud_boot_command_x86_64_efi = [
+    "<up>e<down><down><end> inst.text net.ifnames=0 inst.gpt inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/almalinux-8.gencloud-x86_64.ks<leftCtrlOn>x<leftCtrlOff>",
+  ]
   gencloud_boot_command_aarch64 = [
     "c<wait>",
     "linux /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=AlmaLinux-8-5-aarch64-dvd ro",
